@@ -174,8 +174,9 @@ fi
 while true;
 do
 read -p "Selection to check multiple from your own numbers (select from a, b, c)
-(For ex. if you select a it will check if the answer is multiple of the number you
-entered in that varibale) : " f
+or you can enter number of your own choice (For ex. if you select a it will check 
+if the answer is multiple of the number you entered in that varibale or if you 
+entered some number it will check if the term is multiple of that number) : " f
 echo #next line
 case $f in
 a) let "f = a"
@@ -187,8 +188,8 @@ break;;
 c) let "f = c"
 answer
 break;;
-*) echo "Invalid choice!!"
-echo #next line
+*) answer
+break;;
 esac
 
 done
