@@ -135,6 +135,7 @@ read -p "Please enter value for a : " a
 read -p "Please enter value for b : " b
 read -p "Please enter value for c : " c
 echo #next line
+sum=0
 
 case $o in
 
@@ -146,10 +147,14 @@ echo #next line
 for (( x=1; x<=n; x++ ))
 do
 let "term = $a*$x*$x + $b*$x + $c"
+let "sum = $sum + $term"
+
 
 echo "Term $x is : $term"
 echo #next line
-done ;;
+done 
+
+echo "The sum of $n terms is : $sum";;
 
 2) echo -n "You selected OPTION 2"
 echo #next line
