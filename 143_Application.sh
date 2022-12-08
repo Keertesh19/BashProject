@@ -176,8 +176,6 @@ else
 fi
 }
 
-while true;
-do
 read -p "Selection to check multiple from your own numbers (select from a, b, c)
 or you can enter number of your own choice (For ex. if you select a it will check 
 if the answer is multiple of the number you entered in that varibale or if you 
@@ -197,7 +195,6 @@ break;;
 break;;
 esac
 
-done
 echo;; #next line
 
 *) echo -n "This is not an VALID option.";;
