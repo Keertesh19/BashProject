@@ -183,16 +183,12 @@ entered some number it will check if the term is multiple of that number) : " f
 echo #next line
 case $f in
 a) let "f = a"
-answer
-break;;
+answer;;
 b) let "f = b"
-answer
-break;;
+answer;;
 c) let "f = c"
-answer
-break;;
-*) answer
-break;;
+answer;;
+*) answer;;
 esac
 
 echo;; #next line
