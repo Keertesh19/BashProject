@@ -92,33 +92,39 @@ read -p "Enter keywords to select tasks (To check the tasks keyword description 
 
 
 #TASK 2 - Himanshu
-p | P | 2) 
+p | P | 2)
 echo #next line
 echo "THIS IS TASK2
 
 $task2"
 echo #next line
-read -p "Choose any positive integer : " num
+read -p "Enter a number to check if this is factor of each number found : " factor
 echo #next line
 read -p "Enter how many numbers you want to display : " hnum
 echo #next line
-a=1
-i=1
-let "j= $i + 2"
-while [ $a -le $hnum ]; do
+read -p "Enter an odd minimum value you want to start the program from : " i
+
+for (( a=1; a <= $hnum; a++ ))
+do
+if [ `expr $i % 2` -eq 0 ];
+then
+	let "i= $i + 1"
+	let "j= $i + 2"
+else
+	let "j= $i + 2"
+fi
 	let "k= $i * $j"
-	echo "The product of $i and $j is $k."
+	echo "$k is product of $i and $j."
 	let "i= $i + 2"
 	let "j= $j + 2"
-	let "q= $k % $num"
+	let "q= $k % $factor"
 	if [ $q -eq 0 ]; then
-		echo "$num is a factor of $k"
+		echo "$factor is a factor of $k"
     echo #next line
 	else
-		echo "$num is not a factor of $k"
+		echo "$factor is not a factor of $k"
 echo #next line
 	fi
-	let "a= $a + 1"
 done
 read -p "Enter keywords to select tasks (To check the tasks keyword description use (h/H/help)) : " tKeyword;;
 
@@ -214,7 +220,7 @@ $task3
 echo #next line
 read -p "Enter keywords to select tasks : " tKeyword;;
 
-e | E | 4) 
+e | E | 4)
 echo #next line
 read -t 1 -p  "Exiting the program..."
 sleep 0.5
@@ -230,7 +236,7 @@ echo "Have a nice day!!"
 echo #next line
 exit 0;;
 
-*) 
+*)
 echo #next line
 read -p "Invalid INPUT! Kindly read the information and select the right keyword.
 
